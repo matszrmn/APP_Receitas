@@ -1,0 +1,66 @@
+extends ../model/layout
+
+block content
+    
+    div(class='cabecalho')
+        p(class='cabecalho') .
+        h1
+            p(class='tituloReceita') Adicione uma Receita
+        p(class='navegacao')
+            a(href='https://mongo-db-matszrmn.c9users.io/', class='home') Home
+    br
+    div(class='feedback')
+        p(class='mensagemSucesso') #{mensagemSucesso}
+        p(class='mensagemErro') #{mensagemErro}
+    form(method='POST', action='/add/receita')
+        #form-group
+            p(class='label') Título &nbsp;&nbsp;&nbsp;
+                input.form-control(name='Titulo', id='Titulo', type='text', required='true')
+        br
+        #form-group
+            p(class='label') URL da Imagem &nbsp;&nbsp;&nbsp;
+                input.form-control(name='ImgURL', id='ImgURL', placeholder='http://..', required='true')
+        br
+        #form-group
+            p(class='label') Autor &nbsp;&nbsp;&nbsp;
+                input.form-control(name='Autor', id='Autor', required='true')
+        br
+        #form-group
+            p(class='label') Tempo de Preparo &nbsp;&nbsp;&nbsp;
+                input.form-control(name='Tempo', id='Tempo', required='true')
+        br
+        #form-group
+            p(class='label') Rende &nbsp;&nbsp;&nbsp;
+                input.form-control(name='Rendimento', id='Rendimento', placeholder='Quantidade de Porções', type='number', min='1', required='true')
+        br
+        #form-group
+            p(class='label') Dificuldade &nbsp;&nbsp;&nbsp;
+                input.form-control(name='Dificuldade', id='Dificuldade', placeholder='Fácil, Difícil', required='true')
+        br
+        #form-group
+            p(class='label') Ingredientes &nbsp;&nbsp;&nbsp;
+                button(type='button', onclick='addTipoIngrediente("Ingrs")', class='botaoPlus')='+'
+                label &nbsp;&nbsp;
+                button(type='button', onclick='removerTipoIngrediente("Ingrs")', class='botaoMinus')='-'
+        div(id='Ingrs', class='blocoIngredientes')
+        br
+        #form-group
+            p(class='label') Modo de Preparo &nbsp;&nbsp;&nbsp;
+                button(type='button', onclick='addPasso("Passos")', class='botaoPlus')='+'
+                label &nbsp;&nbsp;
+                button(type='button', onclick='removerPasso("Passos")', class='botaoMinus')='-'
+        div(id='Passos', class='blocoModoDePreparo')
+        br
+        div(id='botaoAdd', class='blocoAdd')
+            input.btn.btn-primary(type='submit', value='Adicionar !', class='botaoAdd')
+        
+    script
+        include ../../jQuery/jQuery.js
+    script
+        include script/ingrediente.js
+    script
+        include script/passoPreparo.js
+    script
+        include script/infoNutri.js
+    style
+        include style/receita.css

@@ -1,0 +1,67 @@
+extends ../model/layout
+
+block content
+    
+    h1 Modificar Receita
+    br
+    p(class='mensagemSucesso') #{mensagemSucesso}
+    p(class='mensagemErro') #{mensagemErro}
+    
+    script(type="module").
+        let receita = !{JSON.stringify(receita)};
+        let i;
+        for(i=0; i<receita.contIngrd; i++) addIngrediente('Ingrs', receita['Ingrd'+i], receita['QuantIngrd'+i], receita['Unidade'+i]);
+        for(i=0; i<receita.contPasso; i++) addPasso('Passos', receita['Passo'+i]);
+        for(i=0; i<receita.contInfoNutri; i++) addInfoNutri('InfoNutri', receita['InfoNutri'+i], receita['PercentInfoNutri'+i]);
+        //alert(window.location);
+        
+    form(method='POST', action='/update/' + receita._id)
+        #form-group
+            p Nome &nbsp;&nbsp;&nbsp;
+                input.form-control(name='nome', id='nome', type='text', value=receita.Nome, required='true')
+        br
+        #form-group
+            p Dificuldade &nbsp;&nbsp;&nbsp;
+                input.form-control(name='dificuldade', id='dificuldade', min='1', max='5', type='number', value=receita.Dificuldade, required='true')
+        br
+        #form-group
+            p Tempo de Preparo &nbsp;&nbsp;&nbsp;
+                input.form-control(name='tempo', id='tempo', type='time', value=receita.Tempo, required='true')
+        br
+        #form-group
+            p Quantidade de Porções &nbsp;&nbsp;&nbsp;
+                input.form-control(name='quantPor', id='quantPor', type='number', value=receita.QuantPor, required='true')
+        br
+        #form-group
+            p Ingredientes &nbsp;&nbsp;&nbsp;
+                button(type='button', onclick='addIngrediente("Ingrs", false, false, false)')='+'
+                label &nbsp;&nbsp;
+                button(type='button', onclick='removerIngrediente("Ingrs")')='-'
+        div(id='Ingrs', class='ingrsBloco')
+        br
+        #form-group
+            p Passos para Preparar &nbsp;&nbsp;&nbsp;
+                button(type='button', onclick='addPasso("Passos", false)')='+'
+                label &nbsp;&nbsp;
+                button(type='button', onclick='removerPasso("Passos")')='-'
+        div(id='Passos', class='passosBloco')
+        br
+        #form-group
+            p Informação Nutricional &nbsp;&nbsp;&nbsp;
+                button(type='button', onclick='addInfoNutri("InfoNutri", false, false)')='+'
+                label &nbsp;&nbsp;
+                button(type='button', onclick='removerInfoNutri("InfoNutri")')='-'
+        div(id='InfoNutri', class='infoNutri')
+        br
+        input.btn.btn-primary(type='submit', value='Modificar')
+        
+    script
+        include ../../jQuery/jQuery.js
+    script
+        include script/ingrediente.js
+    script
+        include script/passoPreparo.js
+    script
+        include script/infoNutri.js
+    style
+        include style/receita.css

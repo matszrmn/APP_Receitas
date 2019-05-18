@@ -1,0 +1,79 @@
+.cabecalho {    
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    text-align: center;
+    background-color: black;
+}
+.navegacao {
+    text-align: center;
+}
+.home {
+    font-size: 120%;
+    color: lightgrey;
+    margin-right: 12px;
+}
+.addReceita {
+    font-size: 120%;
+    color: lightgrey;
+    margin-left: 12px;
+}
+.tituloReceita {
+    color: lightgreen;
+}
+.imagemDiv {
+    text-align: center;
+    height: 230px;
+    background-color: black;
+}
+.imagemReceita {
+    height: 220px;
+    width: auto;
+}
+.titulo {
+    font-size: 120%;
+    font-weight: bold;
+}
+.valor {
+    font-size: 100%;
+}
+.info {
+    font-size: 70%;
+}
+.botaoExcluir {
+    font-size: 20px;
+    color: white;
+    border-color: red;
+    background-color: red;
+    cursor: pointer;
+}
+h1 {
+    height: 30px;
+}
+h2 {
+    color: goldenrod;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}

@@ -1,0 +1,27 @@
+html {
+    margin: 0;
+    padding: 0;
+    border: 0;
+}
+body {
+    margin: 0;
+    padding: 0;
+    border: 0;
+    background-color: #c1c1c1;
+    color: black;
+    font-size: 16px;
+    font-family: "Times New Roman", Times, serif;
+    font-weight: 400;
+    overflow-x: hidden;
+}
+hr {
+    border-color: #282828;
+}
+footer {
+    height: 85px;
+    bottom: 0;
+    right: 0%;
+    left: 0%;
+    color: lightgreen;
+    background-color: #101010;
+}

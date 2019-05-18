@@ -1,0 +1,53 @@
+.ingrsBloco {
+    position: static;
+    margin-left: 27%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.passosBloco {
+    position: static;
+    margin-left: 25%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.infoNutri {
+    position: static;
+    margin-left: 27%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.mensagemSucesso {
+    /*color: lightgreen;*/
+    color:#00FF00;
+}
+.mensagemErro {
+    color: salmon;
+    /*color:#FF0000;*/
+}
+.mensagemSucesso, .mensagemErro {
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}

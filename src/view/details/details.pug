@@ -1,0 +1,70 @@
+extends ../model/layout
+
+block content
+    div(class='cabecalho')
+        p(class='cabecalho') .
+        h1
+            p(class='tituloReceita') #{receita.titulo}
+        br
+        div(class='imagemDiv')
+            - if(receita.img_url) {
+                img(src=receita.img_url, class='imagemReceita')
+            - }
+        p(class='navegacao')
+            a(href='https://mongo-db-matszrmn.c9users.io/', class='home') Home
+            a(href='https://mongo-db-matszrmn.c9users.io/add/receita', class='addReceita') Adicione uma Receita
+        br
+    ul
+        p
+            | #[tituloDif.titulo Autor ]
+            | #[valorDif.valor #{receita.autor}]
+        p 
+            | #[tituloDif.titulo Data ]
+            | #[valorDif.valor #{receita.data}]
+        p
+            | #[tituloTempo.titulo Tempo de Preparo ]
+            | #[valorTempo.valor #{receita.tempo}]
+        p
+            | #[tituloQuantPor.titulo Rende ]
+            | #[valorQuantPor.valor #{receita.rendimento}]
+        p
+            | #[tituloTempo.titulo Dificuldade ]
+            | #[valorTempo.valor #{receita.dificuldade}]
+        p
+            | #[tituloTempo.titulo Likes ]
+            | #[valorTempo.valor #{receita.likes}]
+        br
+        
+        h2 Ingredientes:
+        -let i;
+        -let keys;
+        -if(receita.ingredientes) {
+        -   for(i=0; i<receita.ingredientes.length; i++) {
+        -       keys = Object.keys(receita.ingredientes[i]);
+                h4= keys[0]
+        -       for(j=0; j<receita.ingredientes[i][keys[0]].length; j++) {
+                    p= receita.ingredientes[i][keys[0]][j]
+        -       }
+        -   }
+        -}
+        br
+        
+        h2 Modo de Preparo:
+        -if(receita['Modo de preparo']) {
+        -   for(i=0; i<receita['Modo de preparo'].length; i++) {
+                p
+                span(style='font-weight:bold')= i+1 + '.) '
+                span= receita['Modo de preparo'][i]
+        -   }
+        -}
+        br
+        br
+        
+        button(type='button', onclick='excluirReceita("'+ receita._id +'")', class='botaoExcluir') Excluir
+        
+    script
+        include ../../jQuery/jQuery.js
+    script
+        include script/excluir.js
+    style
+        include style/details.css

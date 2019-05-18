@@ -1,0 +1,109 @@
+.cabecalho {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    background-color: black;
+}
+h1 {
+    height: 60px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.tituloReceita {
+    text-align: center;
+    color: lightgreen;
+    background-color: black;
+}
+.navegacao {
+    height: 40px;
+    text-align: center;
+}
+.home {
+    font-size: 120%;
+    color: lightgrey;
+}
+.feedback {
+    text-align: center;
+    font-weight: bold;
+}
+.mensagemSucesso {
+    text-align: center;
+    color: #00FF00;
+}
+.mensagemErro {
+    text-align: center;
+    color: salmon;
+}
+.blocoIngredientes {
+    text-align: center;
+}
+.blocoTipoIngrediente {
+    font-weight: bold;
+}
+.blocoModoDePreparo {
+    text-align: center;
+}
+.blocoAdd {
+    text-align: center;
+}
+.botaoAdd {
+    font-size: 125%;
+    color: white;
+    background-color: #0040ff;
+    border-color: #0040ff;
+    cursor: pointer;
+}
+.botaoPlus {
+    color: lightgreen;
+    font-weight: bold;
+    background-color: black;
+    border-color: black;
+    cursor: pointer;
+}
+.botaoMinus {
+    color: white;
+    font-weight: bold;
+    background-color: red;
+    border-color: red;
+    cursor: pointer;
+}
+.infoNutri {
+    margin-left: 27%;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+.label {
+    margin-right: 41%; /*560px*/
+    text-align: right;
+    font-weight: bold;
+}
+.mensagemSucesso, .mensagemErro {
+    margin-right: 41%;
+    text-align: right;
+    font-weight: bold;
+    text-shadow: 1px 1px 0 #000,
+    -1px 1px 0 #000,
+    1px -1px 0 #000,
+    -1px -1px 0 #000,
+    0px 1px 0 #000,
+    0px -1px 0 #000,
+    -1px 0px 0 #000,
+    1px 0px 0 #000,
+    2px 2px 0 #000,
+    -2px 2px 0 #000,
+    2px -2px 0 #000,
+    -2px -2px 0 #000,
+    0px 2px 0 #000,
+    0px -2px 0 #000,
+    -2px 0px 0 #000,
+    2px 0px 0 #000,
+    1px 2px 0 #000,
+    -1px 2px 0 #000,
+    1px -2px 0 #000,
+    -1px -2px 0 #000,
+    2px 1px 0 #000,
+    -2px 1px 0 #000,
+    2px -1px 0 #000,
+    -2px -1px 0 #000;
+}

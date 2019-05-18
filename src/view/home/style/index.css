@@ -1,0 +1,38 @@
+.cabecalho {
+    margin-top: 0;
+    margin-right: 0;
+    margin-left: 0;
+    background-color: black;
+}
+h1 {
+    height: 35px;
+    text-align: center;
+}
+.tituloReceitas {
+    color: lightgreen;
+}
+.blocoPesquisar {
+    text-align: center;
+}
+.botaoPesquisar {
+    margin-left: 10px;
+    cursor: pointer;
+}
+.navegacao {
+    text-align: center;
+}
+.home {
+    font-size: 120%;
+    color: lightgrey;
+    margin-right: 15px;
+}
+.addReceita {
+    font-size: 120%;
+    color: lightgrey;
+    margin-left: 15px;
+}
+.divReceitas {
+    position: static;
+    margin-top: 17%;
+    color:black;
+}

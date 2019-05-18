@@ -1,0 +1,28 @@
+extends ../model/layout
+
+block content
+    div(class='cabecalho')
+        p(class='cabecalho') .
+        h1
+            p(class='tituloReceitas') Receitas USP
+        br
+        form(method='GET', action='/search', class='blocoPesquisar')
+            input.form-control(name='Pesquisa', id='Pesquisa', placeholder='Pesquisar', required='required')
+            input.btn.btn-primary(type='submit', value='Pesquisar', class='botaoPesquisar')
+        br
+        p(class='navegacao')
+            a(href='https://mongo-db-matszrmn.c9users.io/', class='home') Home
+            a(href='https://mongo-db-matszrmn.c9users.io/add/receita', class='addReceita') Adicione uma Receita
+        br
+    ul
+        br
+        each receita, i in receitas
+            table
+                a(href='https://mongo-db-matszrmn.c9users.io/receitas/' + receita._id) #{receita.titulo}
+            br
+        -let i;
+        - for(i=0; i < 15 - receitas.length; i++) {
+            div &nbsp;
+        - }
+    style
+        include style/index.css
